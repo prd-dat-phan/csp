@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. Cấu hình CSP (Content Security Policy) nghiêm ngặt -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://*.paradox.ai; 
+        style-src 'self' 'unsafe-inline' https://*.paradox.ai; 
+        font-src 'self';
+        img-src 'self' data: https://*.paradox.ai; 
+        connect-src 'self' https://*.paradox.ai; 
+        frame-src 'self' https://*.paradox.ai;
+    ">
+
+    <title>Tuyển Dụng Toàn Diện</title>
+    
+    <style>
+        /* Phong cách thô (Brutalist / Plain Text), không thư viện ngoài */
+        body {
+            font-family: monospace, system-ui, sans-serif;
+            background-color: #f4f4f4;
+            color: #111111;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            border: 3px solid #111111;
+            padding: 30px;
+            /* Tạo bóng đổ thô, cứng */
+            box-shadow: 8px 8px 0px #111111; 
+        }
+        header {
+            border-bottom: 3px solid #111111;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1rem;
+            color: #333333;
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            background: #111111;
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            font-family: monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #333333;
+        }
+        .info-box {
+            background: #eef2f7;
+            border: 1px dashed #111111;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Thanh điều hướng thô -->
+        <header>
+            <strong>[KÊNH TUYỂN DỤNG]</strong>
+            <small>CSP: ACTIVE</small>
+        </header>
+
+        <!-- Nội dung chính -->
+        <main>
+            <h1>Ứng tuyển qua Trợ lý AI</h1>
+            
+            <p>
+                Trang web này sử dụng giải pháp kết nối trực tiếp với hệ thống Paradox.ai. 
+                Hệ thống bảo mật mạng (CSP) đã được thiết lập để chỉ cho phép chạy các tài nguyên an toàn từ trang web này và đối tác tuyển dụng đã được chỉ định.
+            </p>
+
+            <!-- Nút bấm hành động -->
+            <button onclick="kichHoatChat()" class="btn">
+                Bắt đầu Chat ngay &rarr;
+            </button>
+        </main>
+
+        <!-- Khối thông tin kỹ thuật phẳng -->
+        <div class="info-box">
+            <strong>Nhật ký hệ thống:</strong><br>
+            - Đã nạp cấu hình thẻ Meta CSP thành công.<br>
+            - Cho phép kết nối: *.paradox.ai
+        </div>
+    </div>
+
+    <script>
+        function kichHoatChat() {
+            alert("Hệ thống đã sẵn sàng. Bạn có thể dán đoạn mã script Paradox vào cuối file này để gọi hộp thoại chat.");
+        }
+    </script>
+</body>
+</html>
