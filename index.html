@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- 1. Cấu hình CSP Toàn diện (Chạy ngầm cho Paradox, Cloudfront, Google & gstatic) -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
-        script-src 'self' 'unsafe-inline' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://gstatic.com; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.gstatic.com https://*.recaptcha.net; 
         style-src 'self' 'unsafe-inline' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://googleapis.com; 
         font-src 'self' data: https://gstatic.com https://*.cloudfront.net;
-        img-src 'self' data: https://*.paradox.ai https://*.cloudfront.net https://*.google.com; 
-        connect-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com; 
-        frame-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com;
+        img-src 'self' data: https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.gstatic.com; 
+        connect-src 'self' https://*.paradox.ai Exploits https://*.cloudfront.net https://*.google.com https://*.gstatic.com; 
+        frame-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.recaptcha.net;
     ">
 
     <title>Tuyển Dụng Toàn Diện</title>
     
     <style>
-        /* Phong cách thô (Brutalist / Plain Text), không thư viện ngoài */
+        /* Giao diện Thô tối giản (Brutalist Style) */
         body {
             font-family: monospace, system-ui, sans-serif;
             background-color: #f4f4f4;
@@ -32,7 +33,6 @@
             background: #ffffff;
             border: 3px solid #111111;
             padding: 30px;
-            /* Tạo bóng đổ thô, cứng */
             box-shadow: 8px 8px 0px #111111; 
         }
         header {
@@ -51,13 +51,13 @@
         p {
             font-size: 1rem;
             color: #333333;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
         .btn {
             display: inline-block;
             background: #111111;
             color: #ffffff;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border: none;
             font-family: monospace;
             font-size: 1rem;
@@ -73,7 +73,7 @@
             background: #eef2f7;
             border: 1px dashed #111111;
             padding: 15px;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.85rem;
         }
     </style>
@@ -81,38 +81,38 @@
 <body>
 
     <div class="container">
-        <!-- Thanh điều hướng thô -->
+        <!-- Thanh tiêu đề hệ thống -->
         <header>
             <strong>[KÊNH TUYỂN DỤNG]</strong>
-            <small>CSP: ACTIVE</small>
+            <small>SECURITY: CSP ACTIVE</small>
         </header>
 
-        <!-- Nội dung chính -->
+        <!-- Nội dung chính tối giản -->
         <main>
             <h1>Ứng tuyển qua Trợ lý AI</h1>
-            
             <p>
-                Trang web này sử dụng giải pháp kết nối trực tiếp với hệ thống Paradox.ai. 
-                Hệ thống bảo mật mạng (CSP) đã được thiết lập để chỉ cho phép chạy các tài nguyên an toàn từ trang web này và đối tác tuyển dụng đã được chỉ định.
+                Nhấn vào nút bên dưới để mở cửa sổ trò chuyện trực tiếp với Trợ lý AI tuyển dụng (Olivia). 
+                Hệ thống mạng đã được cấu hình an toàn để tải dữ liệu từ các đối tác được chỉ định.
             </p>
 
-            <!-- Nút bấm hành động -->
-            <button onclick="kichHoatChat()" class="btn">
-                Bắt đầu Chat ngay &rarr;
+            <!-- Nút bấm hành động duy nhất -->
+            <button onclick="kichHoatChatbot()" class="btn">
+                Bắt đầu ứng tuyển ngay &rarr;
             </button>
         </main>
 
-        <!-- Khối thông tin kỹ thuật phẳng -->
+        <!-- Bảng nhật ký Whitelists kỹ thuật -->
         <div class="info-box">
-            <strong>Nhật ký hệ thống:</strong><br>
-            - Đã nạp cấu hình thẻ Meta CSP thành công.<br>
-            - Cho phép kết nối: *.paradox.ai
+            <strong>Danh sách domain được phép tải (CSP Whitelist):</strong><br>
+            - *.paradox.ai & *.cloudfront.net<br>
+            - *.google.com & *.gstatic.com & *.recaptcha.net
         </div>
     </div>
 
     <script>
-        function kichHoatChat() {
-            alert("Hệ thống đã sẵn sàng. Bạn có thể dán đoạn mã script Paradox vào cuối file này để gọi hộp thoại chat.");
+        function kichHoatChatbot() {
+            // Logic khi bấm nút ứng tuyển
+            alert("Đã kích hoạt yêu cầu kết nối! Hãy dán đoạn script cài đặt Chatbot của Paradox vào ngay trước thẻ đóng </body> để Olivia hoạt động.");
         }
     </script>
     <script type='text/javascript'>
