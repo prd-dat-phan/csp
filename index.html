@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. Cấu hình CSP (Content Security Policy) nghiêm ngặt -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
-        script-src 'self' 'unsafe-inline' https://*.paradox.ai; 
-        style-src 'self' 'unsafe-inline' https://*.paradox.ai; 
-        font-src 'self';
-        img-src 'self' data: https://*.paradox.ai; 
-        connect-src 'self' https://*.paradox.ai; 
-        frame-src 'self' https://*.paradox.ai;
+        script-src 'self' 'unsafe-inline' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://gstatic.com; 
+        style-src 'self' 'unsafe-inline' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://googleapis.com; 
+        font-src 'self' data: https://gstatic.com https://*.cloudfront.net;
+        img-src 'self' data: https://*.paradox.ai https://*.cloudfront.net https://*.google.com; 
+        connect-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com; 
+        frame-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com;
     ">
 
     <title>Tuyển Dụng Toàn Diện</title>
@@ -116,5 +115,19 @@
             alert("Hệ thống đã sẵn sàng. Bạn có thể dán đoạn mã script Paradox vào cuối file này để gọi hộp thoại chat.");
         }
     </script>
+    <script type='text/javascript'>
+    (function(o,l) {
+        window.oliviaChatData = window.oliviaChatData || [];
+        window.oliviaChatBaseUrl = o;
+        window.oliviaChatData.push(['setKey', l]);
+        window.oliviaChatData.push(['start']);
+        var apply = document.createElement('script');
+        apply.type = 'text/javascript';
+        apply.async = true;
+        apply.src = 'https://d18xlt4ammf2il.cloudfront.net/static/site/js/widget-client.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(apply, s);
+    })('https://dev.paradox.ai', 'riehaqzrcugfruunzbqj');
+</script>
 </body>
 </html>
