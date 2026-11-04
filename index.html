@@ -9,10 +9,10 @@
         default-src 'self'; 
         script-src 'self' 'unsafe-inline' 'unsafe-eval' *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com *.recaptcha.net; 
         style-src 'self' 'unsafe-inline' *.paradox.ai *.cloudfront.net *.google.com googleapis.com; 
-        font-src 'self' data: gstatic.com *.cloudfront.net; 
+        font-src 'self' data: gstatic.com *.cloudfront.net *.workdaycdn.com; 
         img-src 'self' data: *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com; 
         media-src 'self' blob: data: *.paradox.ai; 
-        connect-src 'self' *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com; 
+        connect-src 'self' *.paradox.ai wss://*.paradox.ai *.cloudfront.net *.google.com *.gstatic.com; 
         frame-src 'self' *.paradox.ai *.cloudfront.net *.google.com *.recaptcha.net;
     ">
 
@@ -140,6 +140,7 @@
             <strong>Danh sách domain được phép tải (CSP Whitelist):</strong><br>
             - *.paradox.ai & *.cloudfront.net<br>
             - *.google.com & *.gstatic.com & *.recaptcha.net
+            - *.workdaycdn.com
         </div>
     </div>
 
