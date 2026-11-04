@@ -7,12 +7,13 @@
     <!-- 1. Cấu hình CSP Toàn diện (Chạy ngầm cho Paradox, Cloudfront, Google & gstatic) -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.gstatic.com https://*.recaptcha.net; 
-        style-src 'self' 'unsafe-inline' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://googleapis.com; 
-        font-src 'self' data: https://gstatic.com https://*.cloudfront.net;
-        img-src 'self' data: https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.gstatic.com; 
-        connect-src 'self' https://*.paradox.ai Exploits https://*.cloudfront.net https://*.google.com https://*.gstatic.com; 
-        frame-src 'self' https://*.paradox.ai https://*.cloudfront.net https://*.google.com https://*.recaptcha.net;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com *.recaptcha.net; 
+        style-src 'self' 'unsafe-inline' *.paradox.ai *.cloudfront.net *.google.com googleapis.com; 
+        font-src 'self' data: gstatic.com *.cloudfront.net; 
+        img-src 'self' data: *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com; 
+        media-src 'self' blob: data: *.paradox.ai; 
+        connect-src 'self' *.paradox.ai *.cloudfront.net *.google.com *.gstatic.com; 
+        frame-src 'self' *.paradox.ai *.cloudfront.net *.google.com *.recaptcha.net;
     ">
 
     <title>Tuyển Dụng Toàn Diện</title>
